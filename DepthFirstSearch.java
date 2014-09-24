@@ -1,6 +1,8 @@
 /** *************************************************
  * Depth first search traversal.
  *
+ * Uses an implicit stack via recursion.
+ *
  * Applications: 
  * * Finding if a path from v to w exists. If so, return the path.
  * * Checking connectivity.
