@@ -7,12 +7,14 @@
 
 class CC{
     private boolean[]   marked;
-    private int[]       id;
+    private int[]       id;         //name/id of this group of components
+    private int[]       size;       //num of nodes in this component
     private int         count;
 
     public CC(Graph G){
         marked = new boolean[G.V()];
         id     = new int[G.V()];
+        size   = new int[G.V()];
         count  = 0;
 
         for( int s=0; s < G.V(); ++s ){
@@ -24,8 +26,9 @@ class CC{
     }
 
     private void dfs(Graph G, int v){
-        id[v] = count;
         marked[v] = true;
+        id[v] = count;  //the component name/id of node v is count
+        size[count]++;  //increase size of this component by 1
 
         for( int w: G.adj(v) ){
             if( !marked[w] ){
@@ -42,6 +45,10 @@ class CC{
     //number of connected components
     public int count(){
         return count;
+    }
+
+    public int size(int v){
+        return size[id(v)];
     }
 
     public boolean areConnected(int v, int w){
