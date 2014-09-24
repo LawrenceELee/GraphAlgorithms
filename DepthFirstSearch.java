@@ -5,6 +5,9 @@
  * * Finding if a path from v to w exists. If so, return the path.
  * * Checking connectivity.
  *
+ * Usage:
+ * java DepthSearchFirst <pathToGraphText> <sourceNode>
+ *
  * ************************************************** */
 
 import java.util.Stack;

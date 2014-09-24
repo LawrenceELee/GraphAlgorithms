@@ -2,7 +2,8 @@ Graph data structures and algorithms
 
 * Unweighted, undirected graphs (DFS, BFS, CC)
   * Depth first search
-  * Breathd first search
+  * Breathd first search 
+    * Can compute shortest path for unweight, undirected graphs
   * Connected componenet
 * Unweighted, directed graphs
   * Depth first search

@@ -15,26 +15,25 @@ class Graph{
         this.V = V;
         this.E = 0;
         
-        adj = (Bag<Integer>[]) new Bag[V]; 
+        adj = (Bag<Integer>[]) new Bag[V];
         //need ugly cast b/c can't instatiate generic arrays
         for( int v=0; v < V; ++v ){
-            adj[v] = new Bag<>();
+            adj[v] = new Bag<Integer>();
         }
     }
 
     //helper to create graph from text file quickly
-    public Graph(In in){
+    public Graph(In in) {
         this(in.readInt());
-        for( int i=0; i < E; ++i ){
+        int E = in.readInt();
+        for (int i = 0; i < E; i++) {
             int v = in.readInt();
             int w = in.readInt();
-            addEdge(v,w);
+            addEdge(v, w);
         }
     }
 
     public void addEdge(int v, int w){
-        if( v<0 || v>V || w<0 || w>V ) throw new IndexOutOfBoundsException();
-
         adj[v].add(w);
         adj[w].add(v);
         ++E;
@@ -49,8 +48,6 @@ class Graph{
     }
 
     public Iterable<Integer> adj(int v){
-        if( v<0 || v>V ) throw new IndexOutOfBoundsException();
-
         return adj[v];
     }
 
