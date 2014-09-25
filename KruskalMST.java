@@ -14,6 +14,8 @@
  * Finding road networks
  * Approximation algs for NP-hard problems like traveling salesman
  * Real time facial recognition
+ *
+ * Runtime: O(E log E) due to the delMin() for PQ.
  * ************************************************** */
 
 class KruskalMST{
