@@ -45,7 +45,7 @@ class Digraph{
         return adj[v];
     }
 
-    //will be useful for topological sort
+    //will be useful for SCC
     public Digraph reverse(){
         Digraph R = new Digraph(V);
         for( int v=0; v < V; ++v ){
