@@ -45,4 +45,3 @@ If speed/fast lookup is a concern, use adj matrix.
 
 If density (|E|/|V|^2) > 1/64, then use matrix.
 (src: http://stackoverflow.com/a/5419933)
-
