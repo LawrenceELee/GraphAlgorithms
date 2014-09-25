@@ -1,46 +1,51 @@
 /** *************************************************
+ * Undirected, weighted graph.
+ *
+ * This data structure is used primarily for min spanning tree finding algs.
  *
  * ************************************************** */
 
-class EWDigraph{
-    private Bag<DirectedEdge>[] adj;
+class EWGraph{
+    private Bag<Edge>[] adj;
     private int         E;
     private final int   V;
 
-    public EWDigraph(int V){
+    public EWGraph(int V){
         this.V = V;
         this.E = 0;
         
-        adj = (Bag<DirectedEdge>[]) new Bag[V];
-        for( int v=0; v < V; ++v ){
+        adj = (Bag<Edge>[]) new Bag[V];
+        for( int v=0; v < V(); ++v ){
             adj[v] = new Bag<>();
         }
     }
 
-    public EWDigraph(In in) {
+    public EWGraph(In in) {
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++) {
             int v = in.readInt();
             int w = in.readInt();
             double weight = in.readDouble();
-            addEdge(new DirectedEdge(v, w, weight));
+            Edge e = new Edge(v, w, weight);
+            addEdge(e);
         }
     }
 
-    public void addEdge(DirectedEdge e){
-        int v = e.from();
+    public void addEdge(Edge e){
+        int v = e.either();
+        int w = e.other(v);
 
         adj[v].add(e);
+        adj[w].add(e);
         ++E;
     }
 
-    public Iterable<DirectedEdge> adj(int v){
+    public Iterable<Edge> adj(int v){
         return adj[v];
     }
 
     public int E(){ return E; }
-
     public int V(){ return V; }
 
     public String toString() {
@@ -49,7 +54,7 @@ class EWDigraph{
         s.append(V + " " + E + NEWLINE);
         for (int v = 0; v < V; v++) {
             s.append(v + ": ");
-            for (DirectedEdge e : adj[v]) {
+            for (Edge e : adj[v]) {
                 s.append(e + "  ");
             }
             s.append(NEWLINE);
@@ -57,11 +62,12 @@ class EWDigraph{
         return s.toString();
     }
 
-    //test/driver
+    //tester/driver
     public static void main(String[] args) {
         In in = new In(args[0]);
-        EWDigraph G = new EWDigraph(in);
+        EWGraph G = new EWGraph(in);
         StdOut.println(G);
     }
+
 
 }
