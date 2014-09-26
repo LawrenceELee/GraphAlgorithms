@@ -95,7 +95,7 @@ class BreadthFirstSearch{
         Graph G = new Graph(in);
 
         int s = Integer.parseInt(args[1]);
-        BreadthFirstPaths bfs = new BreadthFirstPaths(G, s);
+        BreadthFirstSearch bfs = new BreadthFirstSearch(G, s);
 
         for (int v = 0; v < G.V(); v++) {
             if (bfs.hasPathTo(v)) {
