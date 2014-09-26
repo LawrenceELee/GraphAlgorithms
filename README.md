@@ -45,3 +45,11 @@ If speed/fast lookup is a concern, use adj matrix.
 
 If density (|E|/|V|^2) > 1/64, then use matrix.
 (src: http://stackoverflow.com/a/5419933)
+
+
+Note:
+If there is 1 error in a java file and it doesn't compile, ant won't compile/
+recompile any of the .java files.
+
+Note: to run class file from "root" dir of project. Use:
+'java -cp "build/" BreadthFirstSearch data/graph1.txt 0'

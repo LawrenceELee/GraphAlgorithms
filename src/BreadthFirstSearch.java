@@ -50,6 +50,8 @@ class BreadthFirstSearch{
             distTo[v] = Integer.MAX_VALUE;
         }
 
+        distTo[s] = 0;
+
         bfs(G, s);
     }
 
