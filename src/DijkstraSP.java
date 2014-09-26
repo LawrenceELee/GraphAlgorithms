@@ -9,6 +9,11 @@
  * GPS (map routing)
  * Currentcy arbitrage
  *
+ * Runtime: O(V lg V + E lg V) using the a min pq implemented with a ___
+ *          simplifies to  O(E lg V) b/c V is O(E)
+ *          assuming a connected graph.
+ *
+ * Runtime: O(E + V*lgV) using the a min pq implemented with a fib heap.
  *
  * ************************************************** */
 
