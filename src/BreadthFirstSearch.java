@@ -1,6 +1,19 @@
 /** *************************************************
  * Breath first search.
  *
+ * Explores graph from source s in concentric rings at increaseing distances
+ * from source s. Like layers in an onion.
+ *
+ * Uses a Queue data structure. If you switch Queue with Stack, you get DFS.
+ *
+ * Runtime: O(E+V)
+ *          since every node and edge are explored in worst case.
+ *          even though there are nested loops.
+ *
+ *
+ * Space  : O(V) if using adj list, proportional to the number of nodes.
+ *          O(V^2) if using adj matrix
+ *
  * Sample run and output:
  * java BreadthFirstSearch data/graph2.txt 0
  * 0 to 0 (0):  0
@@ -50,13 +63,13 @@ class BreadthFirstSearch{
             distTo[v] = Integer.MAX_VALUE;
         }
 
-        distTo[s] = 0;
-
         bfs(G, s);
     }
 
     private void bfs(Graph G, int s){
-        Queue<Integer> que = new Queue();
+        Queue<Integer> que = new Queue<>();
+        distTo[s] = 0;
+        marked[s] = true;
         que.enqueue(s);
 
         while( !que.isEmpty() ){

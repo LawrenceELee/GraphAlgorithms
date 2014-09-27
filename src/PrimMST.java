@@ -3,7 +3,8 @@
  *
  * It grows by adding edges like limbs/branches on a tree.
  *
- * Prim and Dijkstra are very similar to each other.
+ * PrimMST and DijkstraSP are very similar to each other in how they
+ * greedily find the next edge and grow.
  *
  * ************************************************** */
 

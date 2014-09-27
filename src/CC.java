@@ -1,7 +1,15 @@
 /** *************************************************
  * Computes connected components of a graph.
+ * 
+ * Two nodes are connected if they are joined by a path.
+ * A connected component is a a maximal set of these connected nodes.
  *
- * A connected component is a 
+ * Applications:
+ * Groups/cliques in a social (undirected) network like facebook 
+ * (friending requires mutal confirmation),
+ * but not twitter (directed, followees don't have to follow followers).
+ *
+ * Runtime: O(V+E) since just a modified DFS.
  *
  * ************************************************** */
 

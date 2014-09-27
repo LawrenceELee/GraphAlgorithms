@@ -1,11 +1,21 @@
 /** *************************************************
  * Computes the strongly connected components using Kosaraju-Sharir algorithm.
  *
- * 1) Compute reverse(G).
- * 2) Compute post-ordering on G reverse.
- * 3) Run DFS on G reverse post-ordering.
+ * Two VERTICES v and w are strongly connected if there is both a directed
+ * pat from v to w and from w to v.
  *
- * Runs in O(V+ E) time.
+ * A GRAPH is strongly connected if every vertex is reachable from 
+ * every other vertex (i.e. all vertices are strongly connected).
+ *
+ * Kosaraju SCC alg runs DFS twice:
+ * 1) Compute reverse(G).
+ * 2) Compute post-ordering on G reverse. (first dfs)
+ * 3) Run DFS on G reverse post-ordering. (second dfs)
+ *
+ * Runtime: O(V+E), linear to number of nodes V and edges E.
+ *
+ * Applications:
+ * 2-satisfiablity problem.
  *
  * ************************************************** */
 

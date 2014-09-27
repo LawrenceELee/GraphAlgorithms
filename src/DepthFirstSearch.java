@@ -1,14 +1,19 @@
 /** *************************************************
  * Depth first search traversal.
  *
- * Uses an implicit stack via recursion.
+ * Uses an implicit stack via recursion. Can be written with an explicit
+ * Stack to hold objects. If you replace Stack with Queue, you get BFS.
  *
- * Applications: 
+ * Applications:
  * * Finding if a path from v to w exists. If so, return the path.
  * * Checking connectivity.
  *
  * Usage:
  * java DepthSearchFirst <pathToGraphText> <sourceNode>
+ *
+ * Runtime: O(E+V) since every vertex and edge will be explored in worst case.
+ * Space  : O(V) if using adj list
+ *          O(V^2) if using adj matrix
  *
  * ************************************************** */
 

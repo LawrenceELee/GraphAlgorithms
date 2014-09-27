@@ -1,6 +1,16 @@
 /** *************************************************
  * Directed graph implementation.
  *
+ * Applications for directed graphs:
+ * Road network: vertex: intersection, edge: one-way streets.
+ * Implication graph
+ * Combinational circuit (logic circuit)
+ * Internet. vertex: webpage, edge: hyperlink
+ * Scheduling. vertex: task, edge: precedence constraint.
+ * Citation: vert: article, edge: citation.
+ * Java garbage collection. vert: object, edge: reference.
+ *
+ *
  * ************************************************** */
 
 class Digraph{
