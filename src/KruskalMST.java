@@ -19,13 +19,14 @@
  * ************************************************** */
 
 class KruskalMST{
-    private Queue<Edge> mst = new Queue<>();
+    private Queue<Edge> mst;
     //used to keep track of which edges we used to construct mst
     private double weight;      //total weight of tree
 
     public KruskalMST(EWGraph G){
-        MinPQ<Edge> pq = new MinPQ<>();
-        UF          uf = new UF(G.V());
+        MinPQ<Edge> pq  = new MinPQ<>();
+        UF          uf  = new UF(G.V());
+        mst             = new Queue<>();
 
         //add all edges to priority queue, the pq will do all the sorting
         for (Edge e : G.edges()) {
