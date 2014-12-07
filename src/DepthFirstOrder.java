@@ -4,20 +4,21 @@
  * ************************************************** */
 
 class DepthFirstOrder{
-    private Queue<Integer> pre;
-    private Queue<Integer> post;
+    private Queue<Integer> pre;     //pre-order
+    private Queue<Integer> post;    //post-order
     private Stack<Integer> reversePost;
+    //reverse post-order (post-order in pushed onto stack to get reverse order)
 
-    private boolean[] marked;
-    private int[]     edgeTo;
-
-    //private Queue<Integer> in; 
-    //in order makes sense for trees, but doesn't make sense for a graph.
+    //private Queue<Integer> in;        //in-order traversal
+    //in-order makes sense for trees, but doesn't make sense for a graph.
     //usually inorder would be:
     //explore(node.left);
     //inorder(node);
     //explore(node.right);
     //but there isn't this symmetry for a graph.
+
+    private boolean[] marked;
+    private int[]     edgeTo;
 
     public DepthFirstOrder(Digraph G){
         pre = new Queue<>();
