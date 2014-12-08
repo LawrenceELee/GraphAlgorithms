@@ -6,6 +6,18 @@
  *
  * example run: java Topological jobs.txt "/"
  *
+ * Applications:
+ * analyze graphs with dependencies (course prerequesites, recipe for making a cake)
+ * scheduling
+ *
+ * from Wikipedia:
+ * instruction scheduling,
+ * ordering of formula cell evaluation when recomputing formula values in spreadsheets,
+ * logic synthesis,
+ * determining the order of compilation tasks to perform in makefiles,
+ * data serialization,
+ * and resolving symbol dependencies in linkers.
+ *
  * ************************************************** */
 
 class Topological{
